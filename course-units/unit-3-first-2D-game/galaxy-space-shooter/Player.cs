@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] private bool _isShieldPowerupActive = false;
     [SerializeField] private bool _isSpeedPowerupActive = false;
     [SerializeField] private bool _isTripleshotActive = false;
+    [SerializeField] private float _speedModifier = 2f;
 
     private SpawnManager _spawnManager;
     // Start is called before the first frame update
@@ -79,5 +80,48 @@ public class Player : MonoBehaviour
             _spawnManager.OnPlayerDeath();
             Destroy(this.gameObject);
         }
+    }
+
+    public void TripleShotActive()
+    {
+        //when player collides with powerup object
+        _isTripleshotActive = true;
+
+        //start the power down coroutine for tripleshot
+        StartCoroutine(TripleShotPowerDownRoutine());
+    }
+
+    IEnumerator TripleShotPowerDownRoutine()
+    {
+        //wait 5 seconds, then turn off triple shot
+        yield return new waitForSecounds(5.0f);
+        _isTripleshotActive = false;
+    }
+
+    public void SpeedBoostActive()
+    {
+        //when player collides with powerup object
+        _isSpeedPowerupActive = true;
+        _speed *= _spawnManager;
+
+        //start the power down coroutine for speed boost
+        StartCoroutine(SpeedBoostPowerDownRoutine());
+    }
+
+    IEnumerator SpeedBoostPowerDownRoutine()
+    {
+        //wait 5 sconds, then turn off speed boost
+        yield return new waitForSecounds(5.0f);
+        _isSpeedPowerupActive = false;
+        _speed /= _speedModifier;
+    }
+
+    public void ShieldsActive()
+    {
+        //when player collides with powerup object
+        _isShieldsActive = true;
+
+        //turn on the visual look of the sheid
+        //code goes here
     }
 }
