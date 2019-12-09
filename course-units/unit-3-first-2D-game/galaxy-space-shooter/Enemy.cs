@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _speed = 3f;
+    [SerializeField] private GameObject _laserPrefab;
+    private float _fireRate = 3f;
+    private float _canFire = -1f;
     private Player _player;
     private Animator _enemyAnim;
     private AudioSource _audioSource;
@@ -12,7 +15,6 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //transform.position = new Vector3(0, 8, 0);
         _player = GameObject.Find("Player").GetComponent<Player>();
         _enemyAnim = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
@@ -36,13 +38,30 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CalculateMovement();
+
+        if(Time.time > _canFire)
+        {
+            _fireRate = Random.Range(3f, 7f);
+            _canFire = Time.time + _fireRate;
+            GameObject enemyLaser = Instantiate(_laserPrefab, transform.position, Quaternion.identity);
+            Laser[] lasers = enemyLaser.GetComponentsInChildren<Laser>();
+
+            for(int i = 0; i < lasers.Length; i++)
+            {
+                lasers[i].AssignEnemyLaser();
+            }
+        }
+    }
+
+    private void CalculateMovement()
+    {
         //move down at 4 meters per second
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
-        
+
         //if bottom of screen
         //respawn at top with new random
-        if(transform.position.y < -5f)
+        if (transform.position.y < -5f)
         {
             float randomX = Random.Range(-8f, 8f);
             transform.position = new Vector3(randomX, 8, 0);
