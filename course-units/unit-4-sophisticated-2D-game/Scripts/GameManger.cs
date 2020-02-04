@@ -14,14 +14,14 @@ public class GameManger : MonoBehaviour
     //through its public static methods.
     public static GameManger instance;
 
-    [SerializeField] private int _itemCount = 0;            //How many items the player has collected
-    [SerializeField] private int _playerLives = 3;          //How many lives the player has for the game
+    public int _itemCount = 0;                              //How many items the player has collected
+    public int _playerLives = 5;                            //How many lives the player has for the game
 
     private bool _isGameOver = false;                       //Is the game currently over?
     public float waitToRespawn = 0.5f;                      //How long before respawning player
 
-    //public Checkpoints[] checkpoints;                       //An array of all the avaiable checkpoints
-    //public Vector3 spawnPoint;                              //Location for the player to respawn at
+    //public Checkpoints[] checkpoints;                     //An array of all the avaiable checkpoints
+    public Vector2 spawnPoint;                              //Location for the player to respawn at
 
     void Awake()
     {
@@ -71,6 +71,7 @@ public class GameManger : MonoBehaviour
         _playerLives--;
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+        UIManager.instance.UpdateLivesText(_playerLives);
     }
 
     // Method to reset the game if player is out of lives
@@ -78,18 +79,20 @@ public class GameManger : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         Destroy(this.gameObject);
+        UIManager.instance.UpdateLivesText(_playerLives);
     }
 
     // Method to add to item count
     public void AddToItemCount()
     {
         _itemCount++;
+        UIManager.instance.UpdateScoreText(_itemCount);
     }
 
-    //Method to set a new spawn point
-    public void SetSpawnPoint(Vector3 newSpawnPoint)
+    //Method to set a new spawn position for the player
+    public void SetSpawnPoint(Vector2 newSpawnPoint)
     {
-        //spawnPoint = newSpawnPoint;
+        spawnPoint = newSpawnPoint;
     }
 
 

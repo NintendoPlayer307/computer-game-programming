@@ -8,7 +8,7 @@ public class Checkpoints : MonoBehaviour
     public bool hasBeenChecked = false;
 
     private Animator _anim;
-    private float waitTime = 0f;
+    //private float waitTime = 0f;
 
     // Start is called before the first frame update
     void Start()

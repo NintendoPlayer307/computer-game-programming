@@ -33,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _sr = GetComponent<SpriteRenderer>();
         _anim = GetComponent<Animator>();
+
+        //Set players starting point
+        transform.position = GameManger.instance.spawnPoint;
     }
 
     // Update is called once per frame
