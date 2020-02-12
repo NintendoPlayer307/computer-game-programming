@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bee : MonoBehaviour
+public class VerticalPatrol : MonoBehaviour
 {
     public float speed;
     public Transform upPoint, downPoint;
