@@ -95,5 +95,21 @@ public class GameManager : MonoBehaviour
         spawnPoint = newSpawnPoint;
     }
 
+    public void EndLevel()
+    {
+        StartCoroutine(EndLevelRoutine());
+    }
 
+    public IEnumerator EndLevelRoutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        UIManager.instance.FadeToBlack();
+
+        yield return new WaitForSeconds((1f / UIManager.instance.fadeSpeed) + 0.25f);
+
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        SceneManager.LoadScene(1);
+    }
 }
