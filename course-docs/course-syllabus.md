@@ -1,4 +1,4 @@
-# Course Syllabus 2019-2020
+# Course Syllabus
 
 ## General Course Description
 Computer Game Programming is a hands-on course designed for students who are interested in pursuing a career in the computer gaming industry. Students will develop skills used by commercial game studios. Curriculum covers game design, game mathematics, game engines, interactive 3-D graphics, and artificial intelligence. The course focuses on improving students’ skills in creative and critical thinking, communication and collaboration, foundational programming principles, and post-secondary and career planning.
@@ -50,21 +50,13 @@ Your grade is weighted in this course. 50% of a students grade comes from class 
 
 #### Class Participation
 
-Each day a student can earn up to 3 points. If the student is absent, these points can't be made up unless a verified absent note is given. Students that are on their phone, or have their phone out during class and it was not approved will lose all points for the day and go to the office. Each time a student is off task for any given reason, they will lose 1 point for each time up to 3 times a period.
+Each day a student can earn up to 1 point. Students that are on their phone, or have their phone out during class and it was not approved will lose their point for the day. Each time a student is off task for any given reason, they will lose their point for the period.
+
+Students need to be active and professional during class time.
 
 #### Project time length 
 
-1 - 2 days: 10 - 15 pts
-
-3 - 4 days: 20 - 25 pts
-
-1 - 2 Weeks: 50 - 100 pts 
-
-Quizzes: 25 pts 
-
-Tests: 50 pts 
-
-Finals: 100 pts
+Projects will be both individual and group work. Projects can be completed in a class period or last up to several weeks.
 
 #### Test, Quizzes, and Finals
 
