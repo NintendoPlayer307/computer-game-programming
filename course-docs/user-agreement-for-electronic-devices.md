@@ -13,14 +13,14 @@ Student/Parent Acknowledgment
 
 I have read and acknowledge the terms set forth in this agreement and do hereby agree to abide by them. Mr. Scott will NOT take any students phone at any time, but rather student(s) will be asked to go to the discipline office if they are not obeying this agreement.
 
-Date: ________________________________________________________
+Date: _9/29/21_______________________________________________________
 
-Parent Name (print) __________________________________________
+Parent Name (print) _____Olga Diaz_____________________________________
 
-Parent Signature: ____________________________________________
+Parent Signature: _______Olga Diaz_____________________________________
 
-Parent Contact Phone # or email: _____________________________
+Parent Contact Phone # or email: ___951-204-2576__________________________
 
-Student Name (print) _________________________________________
+Student Name (print) _______Anthony lozano__________________________________
  
-Student Signature: ___________________________________________
+Student Signature: ___________Anthony Lozano________________________________
